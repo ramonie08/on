@@ -1,117 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LALA - WhatsApp</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LAITE - WhatsApp</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #e5ddd5;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e0f7e9, #d4eaf5);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
     }
-    .container {
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      padding: 20px;
-      max-width: 400px;
-      width: 90%;
+
+    .card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      max-width: 360px;
+      width: 100%;
       text-align: center;
-      position: relative;
     }
-    .profile {
-      position: relative;
-      display: inline-block;
-    }
-    .profile img {
-      width: 120px;
-      height: 120px;
+
+    .avatar {
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #25D366;
+      border: 4px solid #4CAF50;
+      margin-bottom: 15px;
     }
-    .online-indicator {
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
-      width: 20px;
-      height: 20px;
-      background-color: #25D366;
-      border: 2px solid #ffffff;
-      border-radius: 50%;
-    }
+
     h2 {
-      margin: 15px 0 5px 0;
-      color: #075E54;
+      margin: 10px 0 5px;
+      color: #333;
     }
-    p {
-      margin: 5px 0;
-      color: #555;
-      font-size: 15px;
+
+    .info {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
     }
-    .btn-whatsapp {
-      display: inline-block;
+
+    .whatsapp-btn {
       background-color: #25D366;
       color: white;
-      padding: 12px 20px;
       border: none;
-      border-radius: 30px;
+      padding: 14px 20px;
+      border-radius: 50px;
       font-size: 16px;
       cursor: pointer;
-      margin-top: 15px;
       text-decoration: none;
-      transition: background-color 0.3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
       width: 100%;
-      max-width: 300px;
     }
-    .btn-whatsapp:hover {
+
+    .whatsapp-btn:hover {
       background-color: #128C7E;
     }
-    @media (max-width: 480px) {
-      .profile img {
-        width: 100px;
-        height: 100px;
-      }
-      .online-indicator {
-        width: 16px;
-        height: 16px;
-        bottom: 3px;
-        right: 3px;
-      }
+
+    .whatsapp-btn img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="profile">
-      <img src="https://i.postimg.cc/zDKV8sP5/Imagem-do-Whats-App-de-2025-07-16-s-11-08-57-0cb04b60.jpg" alt="Lais Borges">
-      <div class="online-indicator"></div>
-    </div>
-
-    <h2>SANTOS </h2>
-    <p>21 anos</p>
-    <p>Bahia / SP</p>
-
-    <button class="btn-whatsapp" onclick="redirecionarWhatsApp()">Falar no WhatsApp</button>
+  <div class="card">
+    <img src="https://i.postimg.cc/zDKV8sP5/Imagem-do-Whats-App-de-2025-07-16-s-11-08-57-0cb04b60.jpg" alt="Laite Borges" class="avatar">
+    <h2>LAITE</h2>
+    <div class="info">22 anos • Salvador - BA</div>
+    <button class="whatsapp-btn" onclick="redirecionarWhatsApp()">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+      Falar no WhatsApp
+    </button>
   </div>
 
   <script>
     const numerosWhatsApp = [
-      '557391312463',  // Número secundário
-      '557391352960', //  Número primeiro 
+      '5573987654321',
+      '5573912345678',
+      '5573999999999'
     ];
 
     function redirecionarWhatsApp() {
       const index = Math.floor(Math.random() * numerosWhatsApp.length);
       const numero = numerosWhatsApp[index];
-      const mensagem = encodeURIComponent("Oi Lais, tenho interesse!");
-      const link = https://wa.me/${numero}?text=${mensagem};
+      const mensagem = encodeURIComponent("Oi Laite, quero conversar com você!");
+      const link = `https://wa.me/${numero}?text=${mensagem}`;
       window.location.href = link;
     }
   </script>
